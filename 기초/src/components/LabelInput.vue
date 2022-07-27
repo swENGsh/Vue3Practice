@@ -1,12 +1,15 @@
 <template>
-	<label>
+	<!-- <label class="child-class" style="border: 1px solid black" id="child-id"> -->
+	<label class="form-label" id="child-id">
 		{{ label }}
 		<!-- <input v-model="username" type="text" /> -->
 		<!-- v-model 만들기 -->
 		<!-- :value="modelValue"
 			@input="event => $emit('update:modelValue', event.target.value)" -->
-		<input v-model="value" type="text" />
 	</label>
+	<!-- 다중 루트 노드를 가질 수 있다. -->
+	<!-- v-bind를 이용하여 상속받을 위치 명시. -->
+	<input class="form-control" v-bind="$attrs" v-model="value" type="text" />
 </template>
 
 <script>
