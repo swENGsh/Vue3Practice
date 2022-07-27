@@ -50,7 +50,7 @@ export default {
 		},
 		contents: {
 			type: String,
-			required: true,
+			// required: true,
 		},
 		// Boolean Casting
 		// Boolean 타입은 <mycomponent disabled> === <:disabled="true">
@@ -72,7 +72,7 @@ export default {
 	emits: ['toggleLike'],
 	// setup 함수 내에서 props 사용하고 싶으면 첫 번째 매개변수로 props 지정.
 	setup(props, context) {
-		console.log('props.title: ', props.title);
+		// console.log('props.title: ', props.title);
 
 		const isLikeClass = computed(() =>
 			props.isLike ? 'btn-danger' : 'btn-outline-danger',

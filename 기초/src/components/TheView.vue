@@ -2,6 +2,8 @@
 <template>
 	<main>
 		<div class="container py-4">
+			<PostCreate @create-post="createPost"></PostCreate>
+			<hr class="my-4" />
 			<div class="row g-3">
 				<div class="col col-4">
 					<!-- AppCard를 6개 사용했기 때문에 AppCard instance가 6개생성됨을 콘솔창에서 확인 -->
@@ -26,7 +28,7 @@
 					></AppCard>
 					<!-- :isLike="post.isLike"로도 선언 가능. -->
 					<!-- 부모가 변경되면 자식도 변경되는 것을 확인할 수 있음. -->
-					<button @click="post.isLike = !post.isLike">Toggle</button>
+					<!-- <button @click="post.isLike = !post.isLike">Toggle</button> -->
 				</div>
 				<!-- <div class="col col-4">
 					<AppCard></AppCard>
@@ -38,6 +40,20 @@
 					<AppCard></AppCard>
 				</div> -->
 			</div>
+			<hr class="my-4" />
+			<!-- vue3에서는 사용자 정의 컴포넌트에서는 
+				props로는 modelValue로 값을 넘겨주고
+				event로는 update:modelValue
+				을 이용하여 v-model을 구현할 수 있음.
+			 -->
+			<!-- :modeL-value="username"
+				@update:model-value="value => (username = value)" -->
+			<LabelInput v-model="username" label="이름"></LabelInput>
+			<LabelTitle v-model:title="username" label="제목"></LabelTitle>
+			<Username
+				v-model:firstname="firstname"
+				v-model:lastname="lastname"
+			></Username>
 		</div>
 	</main>
 </template>
@@ -45,10 +61,18 @@
 <script>
 // 한 번 스크립트 모델을 읽어옴. => 콘솔창에 'AppCard module' 한 번 뜨는 것을 확인.
 import AppCard from '@/components/AppCard.vue';
-import { reactive } from 'vue';
+import PostCreate from '@/components/PostCreate.vue';
+import LabelInput from '@/components/LabelInput.vue';
+import LabelTitle from '@/components/LabelTitle.vue';
+import Username from '@/components/Username.vue';
+import { reactive, ref } from 'vue';
 export default {
 	components: {
 		AppCard,
+		PostCreate,
+		LabelInput,
+		LabelTitle,
+		Username,
 	},
 	// 컴포넌트가 사용될 때마다 setup() 함수가 실행됨.
 	setup() {
@@ -83,7 +107,17 @@ export default {
 				type: 'notice',
 			},
 		]);
-		return { post, posts };
+
+		const createPost = newPost => {
+			// console.log('createPost');
+			console.log('newTitle: ', newPost);
+			posts.push(newPost);
+		};
+
+		const username = ref('');
+		const firstname = ref('');
+		const lastname = ref('');
+		return { post, posts, createPost, username, firstname, lastname };
 	},
 };
 </script>
