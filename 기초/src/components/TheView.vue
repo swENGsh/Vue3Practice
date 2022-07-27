@@ -22,6 +22,7 @@
 						:contents="post.contents"
 						:type="post.type"
 						:is-like="post.isLike"
+						@toggle-like="post.isLike = !post.isLike"
 					></AppCard>
 					<!-- :isLike="post.isLike"로도 선언 가능. -->
 					<!-- 부모가 변경되면 자식도 변경되는 것을 확인할 수 있음. -->
