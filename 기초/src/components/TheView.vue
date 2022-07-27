@@ -64,7 +64,7 @@ import AppCard from '@/components/AppCard.vue';
 import PostCreate from '@/components/PostCreate.vue';
 import LabelInput from '@/components/LabelInput.vue';
 import LabelTitle from '@/components/LabelTitle.vue';
-import Username from '@/components/Username.vue';
+import Username from '@/components/TheUsername.vue';
 import { reactive, ref } from 'vue';
 export default {
 	components: {
