@@ -3,7 +3,8 @@
 		<!-- <ProvideInject></ProvideInject> -->
 		<!-- <LifecycleHooks></LifecycleHooks> -->
 		<!-- <TemplateRefs></TemplateRefs> -->
-		<ScriptSetup></ScriptSetup>
+		<!-- <ScriptSetup></ScriptSetup> -->
+		<DynamicComponent />
 	</main>
 </template>
 
@@ -25,7 +26,8 @@ export default {
 };
 </script> -->
 <script setup>
-import ScriptSetup from '@/components/ScriptSetup.vue';
+import DynamicComponent from '@/components/DynamicComponent.vue';
+// import ScriptSetup from '@/components/ScriptSetup.vue';
 </script>
 
 <style lang="scss" scoped></style>
