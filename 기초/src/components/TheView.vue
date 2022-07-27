@@ -1,17 +1,20 @@
 <template>
 	<main>
 		<!-- <ProvideInject></ProvideInject> -->
-		<LifecycleHooks></LifecycleHooks>
+		<!-- <LifecycleHooks></LifecycleHooks> -->
+		<TemplateRefs></TemplateRefs>
 	</main>
 </template>
 
 <script>
-import LifecycleHooks from '@/components/LifecycleHooks.vue';
+import TemplateRefs from '@/components/TemplateRefs.vue';
+// import LifecycleHooks from '@/components/LifecycleHooks.vue';
 // import ProvideInject from '@/components/ProvideInject.vue';
 export default {
 	components: {
 		// ProvideInject,
-		LifecycleHooks,
+		// LifecycleHooks,
+		TemplateRefs,
 	},
 	setup() {
 		return {};
