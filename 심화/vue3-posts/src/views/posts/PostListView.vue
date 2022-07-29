@@ -12,6 +12,11 @@
         ></PostItem>
       </div>
     </div>
+    <hr class="my-4" />
+    <AppCard>
+      <!-- 형식만 맞춰놓은 것임 -->
+      <PostDetailView :id="1"></PostDetailView>
+    </AppCard>
   </div>
 </template>
 
@@ -20,6 +25,8 @@ import { useRouter } from 'vue-router';
 import { ref } from 'vue';
 import { getPosts } from '@/api/posts.js';
 import PostItem from '@/components/posts/PostItem.vue';
+import PostDetailView from './PostDetailView.vue';
+import AppCard from '@/components/AppCard.vue';
 
 const router = useRouter();
 const posts = ref([]);

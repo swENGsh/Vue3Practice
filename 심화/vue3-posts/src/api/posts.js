@@ -10,3 +10,10 @@ const posts = [
 export function getPosts() {
   return posts;
 }
+
+export function getPostById(id) {
+  // 변수를 만들어줌.
+  // const numberId = parseInt(id);
+  // return posts.find(item => item.id === numberId);
+  return posts.find(item => item.id === id);
+}
