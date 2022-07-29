@@ -1,0 +1,41 @@
+{
+  "name": "basic-types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  },
+  "eslintConfig": {
+    "extends": [
+        "airbnb",
+        "prettier"
+    ],
+    "parser": "babel-eslint",
+    "rules": {
+        "react/jsx-filename-extension": 0,
+        "import/no-named-as-default": 0,
+        "import/no-named-as-default-member": 0,
+        "import/no-unresolved": 0,
+        "import/prefer-default-export": 0,
+        "no-underscore-dangle": 0,
+        "no-console": 0,
+        "react/forbid-prop-types": 0
+    },
+    "env": {
+        "browser": true
+    }
+  }
+}
